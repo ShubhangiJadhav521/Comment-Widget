@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Comment Widget README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Comment Widget is a React component that allows you to easily integrate a commenting system into your website. Users can post, edit, delete, like comments, and reply to them. This README provides instructions for integrating and using the widget in different websites.
 
-In the project directory, you can run:
+## Table of Contents
+- [Integration](#integration)
+- [Usage](#usage)
+- [Design Decisions](#design-decisions)
+- [Challenges Faced](#challenges-faced)
+- [User Experience and Accessibility](#user-experience-and-accessibility)
+- [External Libraries](#external-libraries)
 
-### `npm start`
+## Integration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To integrate the Comment Widget into your website, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Prerequisites**:
+   - Make sure you have a React application or a similar environment set up for your website.
 
-### `npm test`
+2. **Component Import**:
+   - Import the `CommentWidget` component into your application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```javascript
+    import CommentWidget from './CommentWidget';
+    ```
 
-### `npm run build`
+3. **Usage**:
+   - Use the `CommentWidget` component in your application where you want to display the comment section.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```javascript
+    <CommentWidget commentsUrl="YOUR_API_URL" currentUserId="CURRENT_USER_ID" />
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - Replace `"YOUR_API_URL"` with the URL of your comment API.
+   - Replace `"CURRENT_USER_ID"` with the ID of the current user, or provide an authentication system based on your application's requirements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Styling**:
+   - Customize the styling of the Comment Widget by modifying the CSS classes defined in the `Comment.css` file.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The Comment Widget provides the following functionality:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Users can post comments.
+- Users can edit their own comments.
+- Users can delete their own comments.
+- Users can like comments.
+- Users can reply to comments.
+- Comments are displayed in a threaded fashion, with replies nested under parent comments.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Design Decisions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React**: The widget is built using React to ensure a modular and maintainable code structure.
 
-## Learn More
+- **Local Storage**: To enhance user experience, comments are stored in local storage. This allows comments to persist between sessions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Comment Sorting**: Comments are initially sorted by the number of likes. This encourages users to see popular comments first.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Challenges Faced
 
-### Code Splitting
+- **Styling**: Ensuring a consistent and responsive design across different websites can be challenging. The CSS classes are provided for customization, but further customization may be required to match your website's design.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **User Authentication**: If user authentication is required for comment management, you will need to integrate it with your website's authentication system.
 
-### Analyzing the Bundle Size
+## User Experience and Accessibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The widget is designed to be user-friendly with features like editing and deleting comments, clear notifications, and responsive design.
 
-### Making a Progressive Web App
+- Consider providing alt text for the comment author's avatars to improve accessibility.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## External Libraries
 
-### Advanced Configuration
+- The widget uses the following external libraries:
+  - `react-toastify`: Used for displaying toast notifications.
+  - `react-reveal`: Used for adding animations to the widget.
+  - `Material-UI`: Used for implementing material design components, styles, and icons.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize and extend the Comment Widget to meet your specific website requirements. Enjoy the benefits of a versatile commenting system for your users!
